@@ -2,7 +2,7 @@
   "manifest_version": 2,
  
   "name": "Rdirect Plugin",
-  "description": "Redirect to any page with a click of the mouse",
+  "description": "Redirect to any page with a double-click of the mouse",
   "version": "1.0",
   "options_page": "options.html",
   "background": { "scripts": ["background.js"] },
