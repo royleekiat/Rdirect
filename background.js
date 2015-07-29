@@ -8,39 +8,14 @@ function run() {
     console.log("off" + current);
     current = min;
     chrome.browserAction.setIcon({path:"Rdirect.png"});
-    chrome.tabs.executeScript(null,{
-      file: 'Undirect.js'
+
+    chrome.storage.sync.set({
+      direct: false
+    }, function(items) {
+      console.log("set off");
     });
 
-    chrome.tabs.onCreated.addListener(function(tab){
-      chrome.tabs.executeScript(null,{
-        file: 'Undirect.js'
-      });
-    })
-
-    chrome.tabs.onActivated.addListener(function(tab){
-      chrome.tabs.executeScript(null,{
-        file: 'Undirect.js'
-      });
-    })
-
-    chrome.tabs.onUpdated.addListener(function(tab){
-      chrome.tabs.executeScript(null,{
-        file: 'Undirect.js'
-      });
-    })
     
-    chrome.tabs.onAttached.addListener(function(tab){
-      chrome.tabs.executeScript(null,{
-        file: 'Undirect.js'
-      });
-    })
-
-    chrome.tabs.onReplaced.addListener(function(tab){
-      chrome.tabs.executeScript(null,{
-        file: 'Undirect.js'
-      });
-    })
   }else{
 
     console.log("on" + current);
@@ -50,6 +25,12 @@ function run() {
 
     chrome.browserAction.setIcon({path:"Rdirect2.png"});
     current++;
+
+    chrome.storage.sync.set({
+      direct: true
+    }, function(items) {
+      console.log("set on");
+    });
 
     chrome.tabs.onCreated.addListener(function(tab){
       chrome.tabs.executeScript(null,{
