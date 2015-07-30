@@ -1,18 +1,3 @@
-// document.addEventListener('DOMContentLoaded', function() {
-//   var initButton = document.getElementById('initiate');
-//   initButton.addEventListener('click', function() {
-//     var url = document.getElementById('url').value;
-//     console.log("begun");
-//     //chrome.tabs.query({active: true},function(tab){
-      
-//      chrome.tabs.executeScript(null,{
-//         file: 'Rdirect.js'
-//       });
-
-      
-//     //});
-//   }, false);
-// }, false);
 
 function save_options() {
   var url = document.getElementById('url').value;
